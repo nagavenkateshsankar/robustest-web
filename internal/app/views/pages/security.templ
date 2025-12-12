@@ -1,0 +1,126 @@
+package pages
+
+import "github.com/izinga/robustest-web/internal/app/views/layouts"
+
+templ SecurityPage() {
+	@layouts.Base("Security", "/security") {
+		<!-- Hero Section -->
+		<section class="pt-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="max-w-3xl">
+					<h1 class="text-4xl md:text-5xl font-bold mb-6">Enterprise-Grade Security</h1>
+					<p class="text-xl text-gray-300 leading-relaxed">
+						Your test data never leaves your premises. RobusTest is designed for organizations where security isn't optional.
+					</p>
+				</div>
+			</div>
+		</section>
+		<!-- Security Features -->
+		<section class="py-16 md:py-24 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Security by Design</h2>
+					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+						Every aspect of RobusTest is built with enterprise security requirements in mind.
+					</p>
+				</div>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="bg-gray-50 rounded-xl p-8">
+						<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">100% On-Premise Deployment</h3>
+						<p class="text-gray-600">The entire RobusTest platform runs within your infrastructure. No data ever leaves your network.</p>
+					</div>
+					<div class="bg-gray-50 rounded-xl p-8">
+						<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">Air-Gapped Support</h3>
+						<p class="text-gray-600">Deploy in completely isolated environments with no internet connectivity required for operation.</p>
+					</div>
+					<div class="bg-gray-50 rounded-xl p-8">
+						<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">Your Security Controls</h3>
+						<p class="text-gray-600">Integrate with your existing SSO, LDAP, and access management systems.</p>
+					</div>
+					<div class="bg-gray-50 rounded-xl p-8">
+						<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">End-to-End Encryption</h3>
+						<p class="text-gray-600">All device communications and data transfers are encrypted in transit and at rest.</p>
+					</div>
+					<div class="bg-gray-50 rounded-xl p-8">
+						<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">Complete Audit Logging</h3>
+						<p class="text-gray-600">Every action is logged for compliance and forensic analysis. Export logs to your SIEM.</p>
+					</div>
+					<div class="bg-gray-50 rounded-xl p-8">
+						<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">Role-Based Access Control</h3>
+						<p class="text-gray-600">Fine-grained permissions let you control exactly who can access what.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Data Flow -->
+		<section class="py-16 md:py-24 bg-gray-900 text-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-bold mb-4">Your Data Stays With You</h2>
+					<p class="text-xl text-gray-400 max-w-2xl mx-auto">
+						Unlike cloud testing services, RobusTest ensures your test data never leaves your network.
+					</p>
+				</div>
+				<div class="grid md:grid-cols-3 gap-8">
+					<div class="bg-gray-800 rounded-xl p-8">
+						<div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4">Test Artifacts</h3>
+						<p class="text-gray-400">Screenshots, videos, logs, and reports stay on your servers.</p>
+					</div>
+					<div class="bg-gray-800 rounded-xl p-8">
+						<div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4">App Binaries</h3>
+						<p class="text-gray-400">Your APKs, IPAs, and app bundles never leave your infrastructure.</p>
+					</div>
+					<div class="bg-gray-800 rounded-xl p-8">
+						<div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6">
+							<svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4">Test Data</h3>
+						<p class="text-gray-400">Credentials, test accounts, and sensitive data remain internal.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	}
+}

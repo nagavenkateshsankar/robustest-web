@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RobusTest Marketing Website
 
-## Getting Started
+Enterprise mobile device lab management marketing website built with Go, Gin, Templ, HTMX, and Tailwind CSS.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Go** - Backend language
+- **Gin** - HTTP web framework
+- **Templ** - Type-safe HTML templating
+- **HTMX** - Client-side interactivity
+- **Tailwind CSS** - Styling (via CDN)
+
+## Project Structure
+
+```
+robustest-web/
+├── cmd/server/main.go          # Server entry point
+├── internal/app/
+│   ├── handler/pages.go        # Page handlers
+│   └── views/
+│       ├── layouts/base.templ  # Base layout with Header & Footer
+│       └── pages/              # Page templates
+│           ├── home.templ
+│           ├── features.templ
+│           ├── pricing.templ
+│           ├── security.templ
+│           ├── about.templ
+│           └── contact.templ
+├── assets/
+│   ├── css/app.css             # Custom CSS
+│   ├── js/
+│   │   ├── app.js              # JavaScript
+│   │   └── htmx.min.js         # HTMX library
+│   └── images/                 # Logo and favicon
+├── go.mod
+└── go.sum
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Go 1.21+
+- Templ CLI (`go install github.com/a-h/templ/cmd/templ@latest`)
 
-## Learn More
+### Run Development Server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Generate templ files
+templ generate
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Run server
+go run ./cmd/server/
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Or build and run
+go build -o robustest-web ./cmd/server/
+./robustest-web
+```
 
-## Deploy on Vercel
+Server runs at http://localhost:3000
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `PORT` - Server port (default: 3000)
+- `GIN_MODE` - Gin mode (debug/release, default: release)
+
+## Pages
+
+- `/` - Home
+- `/features` - Features
+- `/pricing` - Pricing
+- `/security` - Security
+- `/about` - About
+- `/contact` - Contact
+
+## License
+
+Copyright 2024 RobusTest. All rights reserved.
