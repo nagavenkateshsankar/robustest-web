@@ -1,5 +1,10 @@
 package layouts
 
+import (
+	"strconv"
+	"time"
+)
+
 templ Base(title string, currentPath string) {
 	<!DOCTYPE html>
 	<html lang="en">
@@ -72,19 +77,26 @@ templ Header(currentPath string) {
 	</header>
 }
 
+func currentYear() string {
+	return strconv.Itoa(time.Now().Year())
+}
+
 templ Footer() {
 	<footer class="bg-gray-900 text-gray-300">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-				<!-- Brand Column -->
-				<div class="col-span-2 md:col-span-1">
+			<div class="grid grid-cols-2 md:grid-cols-6 gap-8">
+				<!-- Brand Column - spans 2 columns -->
+				<div class="col-span-2">
 					<a href="/" class="inline-block mb-4">
 						<span class="text-2xl font-bold">
 							<span class="text-blue-400">Robus</span><span class="text-white">Test</span>
 						</span>
 					</a>
+					<p class="text-sm text-gray-400 mb-1">
+						Enterprise mobile device lab management.
+					</p>
 					<p class="text-sm text-gray-400 mb-4">
-						Enterprise mobile device lab management. Your devices, your data, your control.
+						Your devices, your data, your control.
 					</p>
 					<a href="https://www.linkedin.com/company/robustest/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
 						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -112,8 +124,8 @@ templ Footer() {
 						<li><a href="/about#careers" class="text-sm text-gray-400 hover:text-white transition-colors">Careers</a></li>
 					</ul>
 				</div>
-				<!-- Contact -->
-				<div>
+				<!-- Contact - spans 2 columns -->
+				<div class="col-span-2">
 					<h3 class="text-white font-semibold mb-4">Contact</h3>
 					<ul class="space-y-3">
 						<li class="flex items-start space-x-2">
@@ -127,17 +139,21 @@ templ Footer() {
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
 							</svg>
-							<span class="text-sm text-gray-400">IIIT Hyderabad, Gachibowli, Hyderabad - 500032, India</span>
+							<span class="text-sm text-gray-400">
+								IIIT Hyderabad,<br/>
+								Gachibowli, Hyderabad - 500032,<br/>
+								India
+							</span>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<!-- Bottom Bar -->
-			<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+			<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
 				<p class="text-sm text-gray-400">
-					&copy; 2024 RobusTest. All rights reserved.
+					© { currentYear() } RobusTest. All rights reserved.
 				</p>
-				<div class="flex space-x-6 mt-4 md:mt-0">
+				<div class="flex items-center space-x-6">
 					<a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
 					<a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a>
 				</div>
