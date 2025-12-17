@@ -73,14 +73,14 @@ func Base(title string, description string, currentPath string) templ.Component 
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "\"><!-- Preconnect for performance --><link rel=\"preconnect\" href=\"https://cdn.tailwindcss.com\"><link rel=\"dns-prefetch\" href=\"https://cdn.tailwindcss.com\"><link rel=\"preconnect\" href=\"https://images.unsplash.com\"><link rel=\"dns-prefetch\" href=\"https://images.unsplash.com\"><!-- Open Graph / Facebook --><meta property=\"og:type\" content=\"website\"><meta property=\"og:url\" content=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "\"><!-- Preconnect for performance --><link rel=\"preconnect\" href=\"https://images.unsplash.com\"><link rel=\"dns-prefetch\" href=\"https://images.unsplash.com\"><!-- Open Graph / Facebook --><meta property=\"og:type\" content=\"website\"><meta property=\"og:url\" content=\"")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var5 string
 		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs("https://robustest.com" + currentPath)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 27, Col: 74}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 25, Col: 74}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 		if templ_7745c5c3_Err != nil {
@@ -93,7 +93,7 @@ func Base(title string, description string, currentPath string) templ.Component 
 		var templ_7745c5c3_Var6 string
 		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(title + " | RobusTest")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 28, Col: 61}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 26, Col: 61}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 		if templ_7745c5c3_Err != nil {
@@ -106,7 +106,7 @@ func Base(title string, description string, currentPath string) templ.Component 
 		var templ_7745c5c3_Var7 string
 		templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(description)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 29, Col: 56}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 27, Col: 56}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 		if templ_7745c5c3_Err != nil {
@@ -119,7 +119,7 @@ func Base(title string, description string, currentPath string) templ.Component 
 		var templ_7745c5c3_Var8 string
 		templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs("https://robustest.com" + currentPath)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 37, Col: 75}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 35, Col: 75}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 		if templ_7745c5c3_Err != nil {
@@ -132,7 +132,7 @@ func Base(title string, description string, currentPath string) templ.Component 
 		var templ_7745c5c3_Var9 string
 		templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(title + " | RobusTest")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 38, Col: 62}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 36, Col: 62}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 		if templ_7745c5c3_Err != nil {
@@ -145,13 +145,13 @@ func Base(title string, description string, currentPath string) templ.Component 
 		var templ_7745c5c3_Var10 string
 		templ_7745c5c3_Var10, templ_7745c5c3_Err = templ.JoinStringErrs(description)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 39, Col: 57}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 37, Col: 57}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var10))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "\"><meta name=\"twitter:image\" content=\"https://robustest.com/assets/images/twitter-card.png\"><link rel=\"icon\" type=\"image/png\" href=\"/assets/images/favicon.png\"><link rel=\"apple-touch-icon\" href=\"/assets/images/apple-touch-icon.png\"><script src=\"https://cdn.tailwindcss.com\"></script><link rel=\"stylesheet\" href=\"/assets/css/app.css\"><script src=\"/assets/js/htmx.min.js\"></script><!-- JSON-LD Structured Data - Organization --><script type=\"application/ld+json\">\n\t\t\t{\n\t\t\t\t\"@context\": \"https://schema.org\",\n\t\t\t\t\"@type\": \"Organization\",\n\t\t\t\t\"name\": \"RobusTest\",\n\t\t\t\t\"url\": \"https://robustest.com\",\n\t\t\t\t\"logo\": \"https://robustest.com/assets/images/logo-full.avif\",\n\t\t\t\t\"description\": \"Enterprise on-premise mobile device lab platform for iOS, Android, and Smart TV testing\",\n\t\t\t\t\"foundingDate\": \"2014\",\n\t\t\t\t\"address\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"@type\": \"PostalAddress\",\n\t\t\t\t\t\t\"streetAddress\": \"IIIT Hyderabad, Gachibowli\",\n\t\t\t\t\t\t\"addressLocality\": \"Hyderabad\",\n\t\t\t\t\t\t\"postalCode\": \"500032\",\n\t\t\t\t\t\t\"addressCountry\": \"IN\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"@type\": \"PostalAddress\",\n\t\t\t\t\t\t\"streetAddress\": \"Nagegowdanapalya\",\n\t\t\t\t\t\t\"addressLocality\": \"Bengaluru\",\n\t\t\t\t\t\t\"postalCode\": \"560109\",\n\t\t\t\t\t\t\"addressCountry\": \"IN\"\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"contactPoint\": {\n\t\t\t\t\t\"@type\": \"ContactPoint\",\n\t\t\t\t\t\"email\": \"hello@robustest.com\",\n\t\t\t\t\t\"contactType\": \"sales\"\n\t\t\t\t},\n\t\t\t\t\"sameAs\": [\n\t\t\t\t\t\"https://www.linkedin.com/company/robustest/\"\n\t\t\t\t]\n\t\t\t}\n\t\t\t</script><!-- JSON-LD Structured Data - WebPage --><script type=\"application/ld+json\">\n\t\t\t{\n\t\t\t\t\"@context\": \"https://schema.org\",\n\t\t\t\t\"@type\": \"WebPage\",\n\t\t\t\t\"name\": { templ.JSONString(title + \" | RobusTest\") },\n\t\t\t\t\"description\": { templ.JSONString(description) },\n\t\t\t\t\"url\": { templ.JSONString(\"https://robustest.com\" + currentPath) },\n\t\t\t\t\"isPartOf\": {\n\t\t\t\t\t\"@type\": \"WebSite\",\n\t\t\t\t\t\"name\": \"RobusTest\",\n\t\t\t\t\t\"url\": \"https://robustest.com\"\n\t\t\t\t},\n\t\t\t\t\"publisher\": {\n\t\t\t\t\t\"@type\": \"Organization\",\n\t\t\t\t\t\"name\": \"RobusTest\"\n\t\t\t\t}\n\t\t\t}\n\t\t\t</script><!-- JSON-LD Structured Data - BreadcrumbList -->")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "\"><meta name=\"twitter:image\" content=\"https://robustest.com/assets/images/twitter-card.png\"><link rel=\"icon\" type=\"image/png\" href=\"/assets/images/favicon.png\"><link rel=\"apple-touch-icon\" href=\"/assets/images/apple-touch-icon.png\"><link rel=\"stylesheet\" href=\"/assets/css/app.css\"><script src=\"/assets/js/htmx.min.js\"></script><!-- JSON-LD Structured Data - Organization --><script type=\"application/ld+json\">\n\t\t\t{\n\t\t\t\t\"@context\": \"https://schema.org\",\n\t\t\t\t\"@type\": \"Organization\",\n\t\t\t\t\"name\": \"RobusTest\",\n\t\t\t\t\"url\": \"https://robustest.com\",\n\t\t\t\t\"logo\": \"https://robustest.com/assets/images/logo-full.avif\",\n\t\t\t\t\"description\": \"Enterprise on-premise mobile device lab platform for iOS, Android, and Smart TV testing\",\n\t\t\t\t\"foundingDate\": \"2014\",\n\t\t\t\t\"address\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"@type\": \"PostalAddress\",\n\t\t\t\t\t\t\"streetAddress\": \"IIIT Hyderabad, Gachibowli\",\n\t\t\t\t\t\t\"addressLocality\": \"Hyderabad\",\n\t\t\t\t\t\t\"postalCode\": \"500032\",\n\t\t\t\t\t\t\"addressCountry\": \"IN\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"@type\": \"PostalAddress\",\n\t\t\t\t\t\t\"streetAddress\": \"Nagegowdanapalya\",\n\t\t\t\t\t\t\"addressLocality\": \"Bengaluru\",\n\t\t\t\t\t\t\"postalCode\": \"560109\",\n\t\t\t\t\t\t\"addressCountry\": \"IN\"\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"contactPoint\": {\n\t\t\t\t\t\"@type\": \"ContactPoint\",\n\t\t\t\t\t\"email\": \"hello@robustest.com\",\n\t\t\t\t\t\"contactType\": \"sales\"\n\t\t\t\t},\n\t\t\t\t\"sameAs\": [\n\t\t\t\t\t\"https://www.linkedin.com/company/robustest/\"\n\t\t\t\t]\n\t\t\t}\n\t\t\t</script><!-- JSON-LD Structured Data - WebPage --><script type=\"application/ld+json\">\n\t\t\t{\n\t\t\t\t\"@context\": \"https://schema.org\",\n\t\t\t\t\"@type\": \"WebPage\",\n\t\t\t\t\"name\": { templ.JSONString(title + \" | RobusTest\") },\n\t\t\t\t\"description\": { templ.JSONString(description) },\n\t\t\t\t\"url\": { templ.JSONString(\"https://robustest.com\" + currentPath) },\n\t\t\t\t\"isPartOf\": {\n\t\t\t\t\t\"@type\": \"WebSite\",\n\t\t\t\t\t\"name\": \"RobusTest\",\n\t\t\t\t\t\"url\": \"https://robustest.com\"\n\t\t\t\t},\n\t\t\t\t\"publisher\": {\n\t\t\t\t\t\"@type\": \"Organization\",\n\t\t\t\t\t\"name\": \"RobusTest\"\n\t\t\t\t}\n\t\t\t}\n\t\t\t</script><!-- JSON-LD Structured Data - BreadcrumbList -->")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -446,7 +446,7 @@ func Footer() templ.Component {
 		var templ_7745c5c3_Var25 string
 		templ_7745c5c3_Var25, templ_7745c5c3_Err = templ.JoinStringErrs(currentYear())
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 323, Col: 23}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/app/views/layouts/base.templ`, Line: 320, Col: 23}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var25))
 		if templ_7745c5c3_Err != nil {

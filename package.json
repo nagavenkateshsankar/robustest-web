@@ -1,0 +1,19 @@
+{
+  "name": "robustest-web",
+  "version": "1.0.0",
+  "description": "Enterprise mobile device lab management marketing website built with Go, Gin, Templ, HTMX, and Tailwind CSS.",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/css/input.css -o ./assets/css/app.css --minify",
+    "build:docs": "npx @tailwindcss/cli -i ./src/css/input.css -o ./docs/assets/css/app.css --minify",
+    "build": "npm run build:css && npm run build:docs",
+    "watch": "npx @tailwindcss/cli -i ./src/css/input.css -o ./assets/css/app.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
+  }
+}
