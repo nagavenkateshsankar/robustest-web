@@ -1,6 +1,8 @@
 # Binaries
 robustest-web
 robustest-web-linux
+robustest-web-mac-intel
+robustest-web-mac-silicon
 *.exe
 *.dll
 *.so

@@ -37,9 +37,13 @@ help:
 	@echo "  templ        Generate templ files"
 	@echo ""
 	@echo "Build:"
-	@echo "  build        Build for current platform"
-	@echo "  build-linux  Build for Linux (production)"
-	@echo "  ui-build     Build and minify CSS/JS assets"
+	@echo "  build            Build for current platform"
+	@echo "  build-linux      Build for Linux"
+	@echo "  build-mac-intel  Build for macOS Intel"
+	@echo "  build-mac-silicon Build for macOS Apple Silicon"
+	@echo "  build-windows    Build for Windows"
+	@echo "  build-all        Build for all platforms"
+	@echo "  ui-build         Build and minify CSS/JS assets"
 	@echo ""
 	@echo "Deployment:"
 	@echo "  release      Create release tarball for deployment"
@@ -66,30 +70,18 @@ templ:
 	@echo "$(GREEN)Generating templ files...$(NC)"
 	templ generate
 
-## ui-build: Build CSS and copy assets to public folder
+## ui-build: Build CSS assets
 ui-build:
 	@echo "$(GREEN)Building UI assets...$(NC)"
 	@mkdir -p $(PUBLIC_DIR)/assets/css
-	@mkdir -p $(PUBLIC_DIR)/assets/js
-	@mkdir -p $(PUBLIC_DIR)/assets/images
-	@mkdir -p $(PUBLIC_DIR)/assets/icons
 	@echo "$(YELLOW)Building Tailwind CSS...$(NC)"
-	npx tailwindcss -i ./src/input.css -o $(PUBLIC_DIR)/assets/css/app.css --minify
-	@echo "$(YELLOW)Copying JS files...$(NC)"
-	@cp -r $(ASSETS_DIR)/js/* $(PUBLIC_DIR)/assets/js/ 2>/dev/null || true
-	@echo "$(YELLOW)Copying images...$(NC)"
-	@cp -r $(ASSETS_DIR)/images/* $(PUBLIC_DIR)/assets/images/ 2>/dev/null || true
-	@echo "$(YELLOW)Copying icons...$(NC)"
-	@cp -r $(ASSETS_DIR)/icons/* $(PUBLIC_DIR)/assets/icons/ 2>/dev/null || true
-	@echo "$(YELLOW)Copying SEO files...$(NC)"
-	@cp $(ASSETS_DIR)/robots.txt $(PUBLIC_DIR)/ 2>/dev/null || true
-	@cp $(ASSETS_DIR)/sitemap.xml $(PUBLIC_DIR)/ 2>/dev/null || true
+	npx @tailwindcss/cli -i ./src/css/input.css -o $(PUBLIC_DIR)/assets/css/app.css --minify
 	@echo "$(VERSION)" > $(PUBLIC_DIR)/VERSION
 	@echo "$(GREEN)UI build complete!$(NC)"
 
 ## watch-css: Watch CSS changes and rebuild
 watch-css:
-	npx tailwindcss -i ./src/input.css -o $(PUBLIC_DIR)/assets/css/app.css --watch
+	npx @tailwindcss/cli -i ./src/css/input.css -o $(PUBLIC_DIR)/assets/css/app.css --watch
 
 ## build: Build for current platform
 build: templ ui-build
@@ -100,15 +92,47 @@ build: templ ui-build
 ## build-linux: Build for Linux (production deployment)
 build-linux: templ ui-build
 	@echo "$(GREEN)Building $(APP_NAME) for Linux...$(NC)"
-	GOOS=$(GOOS_LINUX) GOARCH=$(GOARCH_AMD64) go build $(LDFLAGS) -o $(APP_NAME)-linux $(SRC_DIR)
+	GOOS=linux GOARCH=amd64 go build $(LDFLAGS) -o $(APP_NAME)-linux $(SRC_DIR)
 	@echo "$(GREEN)Build complete: ./$(APP_NAME)-linux$(NC)"
+
+## build-mac-intel: Build for macOS Intel
+build-mac-intel: templ ui-build
+	@echo "$(GREEN)Building $(APP_NAME) for macOS Intel...$(NC)"
+	GOOS=darwin GOARCH=amd64 go build $(LDFLAGS) -o $(APP_NAME)-mac-intel $(SRC_DIR)
+	@echo "$(GREEN)Build complete: ./$(APP_NAME)-mac-intel$(NC)"
+
+## build-mac-silicon: Build for macOS Apple Silicon
+build-mac-silicon: templ ui-build
+	@echo "$(GREEN)Building $(APP_NAME) for macOS Apple Silicon...$(NC)"
+	GOOS=darwin GOARCH=arm64 go build $(LDFLAGS) -o $(APP_NAME)-mac-silicon $(SRC_DIR)
+	@echo "$(GREEN)Build complete: ./$(APP_NAME)-mac-silicon$(NC)"
+
+## build-windows: Build for Windows
+build-windows: templ ui-build
+	@echo "$(GREEN)Building $(APP_NAME) for Windows...$(NC)"
+	GOOS=windows GOARCH=amd64 go build $(LDFLAGS) -o $(APP_NAME).exe $(SRC_DIR)
+	@echo "$(GREEN)Build complete: ./$(APP_NAME).exe$(NC)"
+
+## build-all: Build for all platforms
+build-all: templ ui-build
+	@echo "$(GREEN)Building $(APP_NAME) for all platforms...$(NC)"
+	@echo "$(YELLOW)Building Linux...$(NC)"
+	GOOS=linux GOARCH=amd64 go build $(LDFLAGS) -o $(APP_NAME)-linux $(SRC_DIR)
+	@echo "$(YELLOW)Building macOS Intel...$(NC)"
+	GOOS=darwin GOARCH=amd64 go build $(LDFLAGS) -o $(APP_NAME)-mac-intel $(SRC_DIR)
+	@echo "$(YELLOW)Building macOS Apple Silicon...$(NC)"
+	GOOS=darwin GOARCH=arm64 go build $(LDFLAGS) -o $(APP_NAME)-mac-silicon $(SRC_DIR)
+	@echo "$(YELLOW)Building Windows...$(NC)"
+	GOOS=windows GOARCH=amd64 go build $(LDFLAGS) -o $(APP_NAME).exe $(SRC_DIR)
+	@echo "$(GREEN)All builds complete!$(NC)"
+	@ls -lh $(APP_NAME)-* $(APP_NAME).exe 2>/dev/null || true
 
 ## dev: Start development server with live reload
 dev:
 	@echo "$(GREEN)Starting development server...$(NC)"
 	@make templ
 	@mkdir -p $(PUBLIC_DIR)/assets/css
-	@npx tailwindcss -i ./src/input.css -o $(PUBLIC_DIR)/assets/css/app.css
+	@npx @tailwindcss/cli -i ./src/css/input.css -o $(PUBLIC_DIR)/assets/css/app.css
 	@echo "$(YELLOW)Starting server on http://localhost:3000$(NC)"
 	@GIN_MODE=debug go run $(SRC_DIR)/main.go
 
