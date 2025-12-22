@@ -45,8 +45,15 @@ help:
 	@echo "  build-all        Build for all platforms"
 	@echo "  ui-build         Build and minify CSS/JS assets"
 	@echo ""
+	@echo "Release:"
+	@echo "  release             Create Linux release (default)"
+	@echo "  release-linux       Create Linux tarball"
+	@echo "  release-mac-intel   Create macOS Intel tarball"
+	@echo "  release-mac-silicon Create macOS Silicon tarball"
+	@echo "  release-windows     Create Windows zip"
+	@echo "  release-all         Create all platform releases"
+	@echo ""
 	@echo "Deployment:"
-	@echo "  release      Create release tarball for deployment"
 	@echo "  deploy-gce   Deploy to GCE instance"
 	@echo ""
 	@echo "Utilities:"
@@ -161,17 +168,63 @@ clean:
 	rm -rf $(PUBLIC_DIR)
 	@echo "$(GREEN)Clean complete!$(NC)"
 
-## release: Create release tarball for deployment
-release: build-linux
-	@echo "$(GREEN)Creating release package...$(NC)"
+## release: Create Linux release tarball (default)
+release: release-linux
+
+## release-linux: Create Linux release tarball
+release-linux: build-linux
+	@echo "$(GREEN)Creating Linux release package...$(NC)"
 	@mkdir -p $(DIST_DIR)
-	@rm -f $(DIST_DIR)/$(APP_NAME)-$(VERSION).tar.gz
-	tar -czvf $(DIST_DIR)/$(APP_NAME)-$(VERSION).tar.gz \
-		$(APP_NAME)-linux \
+	@cp $(APP_NAME)-linux $(APP_NAME)
+	tar -czvf $(DIST_DIR)/$(APP_NAME)-$(VERSION)-linux.tar.gz \
+		$(APP_NAME) \
 		$(PUBLIC_DIR) \
 		.env.example \
 		README.md
-	@echo "$(GREEN)Release package created: $(DIST_DIR)/$(APP_NAME)-$(VERSION).tar.gz$(NC)"
+	@rm -f $(APP_NAME)
+	@echo "$(GREEN)Release package created: $(DIST_DIR)/$(APP_NAME)-$(VERSION)-linux.tar.gz$(NC)"
+
+## release-mac-intel: Create macOS Intel release tarball
+release-mac-intel: build-mac-intel
+	@echo "$(GREEN)Creating macOS Intel release package...$(NC)"
+	@mkdir -p $(DIST_DIR)
+	@cp $(APP_NAME)-mac-intel $(APP_NAME)
+	tar -czvf $(DIST_DIR)/$(APP_NAME)-$(VERSION)-mac-intel.tar.gz \
+		$(APP_NAME) \
+		$(PUBLIC_DIR) \
+		.env.example \
+		README.md
+	@rm -f $(APP_NAME)
+	@echo "$(GREEN)Release package created: $(DIST_DIR)/$(APP_NAME)-$(VERSION)-mac-intel.tar.gz$(NC)"
+
+## release-mac-silicon: Create macOS Apple Silicon release tarball
+release-mac-silicon: build-mac-silicon
+	@echo "$(GREEN)Creating macOS Apple Silicon release package...$(NC)"
+	@mkdir -p $(DIST_DIR)
+	@cp $(APP_NAME)-mac-silicon $(APP_NAME)
+	tar -czvf $(DIST_DIR)/$(APP_NAME)-$(VERSION)-mac-silicon.tar.gz \
+		$(APP_NAME) \
+		$(PUBLIC_DIR) \
+		.env.example \
+		README.md
+	@rm -f $(APP_NAME)
+	@echo "$(GREEN)Release package created: $(DIST_DIR)/$(APP_NAME)-$(VERSION)-mac-silicon.tar.gz$(NC)"
+
+## release-windows: Create Windows release zip
+release-windows: build-windows
+	@echo "$(GREEN)Creating Windows release package...$(NC)"
+	@mkdir -p $(DIST_DIR)
+	zip -r $(DIST_DIR)/$(APP_NAME)-$(VERSION)-windows.zip \
+		$(APP_NAME).exe \
+		$(PUBLIC_DIR) \
+		.env.example \
+		README.md
+	@echo "$(GREEN)Release package created: $(DIST_DIR)/$(APP_NAME)-$(VERSION)-windows.zip$(NC)"
+
+## release-all: Create release packages for all platforms
+release-all: release-linux release-mac-intel release-mac-silicon release-windows
+	@echo "$(GREEN)All release packages created:$(NC)"
+	@ls -lh $(DIST_DIR)/
 
 ## deploy-gce: Deploy to GCE (requires gcloud configured)
 deploy-gce: release
