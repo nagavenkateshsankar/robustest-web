@@ -6,11 +6,13 @@ templ PricingPage() {
 	@layouts.Base("Enterprise Mobile Device Lab Pricing", "Custom pricing for enterprise mobile device labs. Unlimited users and test minutes with predictable yearly costs. Compare cloud vs on-premise testing ROI.", "/pricing") {
 		<!-- Hero Section -->
 		<section class="pt-28 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-				<h1 class="text-4xl md:text-5xl font-bold mb-6">Enterprise Mobile Device Lab Pricing</h1>
-				<p class="text-xl text-gray-300 max-w-2xl mx-auto">
-					Every enterprise is different. We'll work with you to create a solution that fits your requirements and budget.
-				</p>
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="max-w-3xl">
+					<h1 class="text-4xl md:text-5xl font-bold mb-6">Enterprise Mobile Device Lab Pricing</h1>
+					<p class="text-xl text-gray-300 leading-relaxed">
+						Every enterprise is different. We'll work with you to create a solution that fits your requirements and budget.
+					</p>
+				</div>
 			</div>
 		</section>
 		<!-- Main Pricing Card -->
@@ -45,6 +47,7 @@ templ PricingPage() {
 							<div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Ongoing support & updates</span></div>
 							<div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Full API access</span></div>
 							<div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Air-gapped deployment support</span></div>
+							<div class="flex items-start gap-3"><svg class="w-5 h-5 text-green-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Access from anywhere, 24x7</span></div>
 						</div>
 						<div class="flex justify-center">
 							<a href="/contact" class="inline-flex items-center justify-center gap-2 bg-cyan-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-cyan-600 transition-colors text-lg">
@@ -70,9 +73,9 @@ templ PricingPage() {
 						<h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">Example: 100 devices, 8 hours/day testing</h3>
 						<div class="grid md:grid-cols-2 gap-8">
 							<div class="bg-red-50 rounded-xl p-6 border border-red-100">
-								<p class="text-sm text-red-600 font-medium mb-2">Cloud Service (per-minute)</p>
+								<p class="text-sm text-red-600 font-medium mb-2">Cloud Service (yearly)</p>
 								<p class="text-3xl font-bold text-red-600 mb-2">~$300,000+</p>
-								<p class="text-sm text-gray-600 mb-4">per year at $0.17/min</p>
+								<p class="text-sm text-gray-600 mb-4">at $0.17/min</p>
 								<ul class="space-y-2 text-sm text-gray-600">
 									<li>• 100 devices × 8 hrs × 60 min = 48,000 min/day</li>
 									<li>• 48,000 × 250 work days = 12M min/year</li>
