@@ -359,5 +359,46 @@ templ HomePage() {
 			}
 		}
 		</script>
+		<!-- FAQ Schema -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "Why choose on-premise over cloud testing services?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "On-premise device labs keep test data within your network, eliminate per-minute billing, support unlimited users, and meet SOC2, HIPAA, and PCI-DSS compliance requirements. Unlike cloud services, you have complete control over your infrastructure."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "What platforms does RobusTest support?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "RobusTest supports Android, iOS, Apple TV, Chromecast, Roku, and web testing. It integrates with Appium, Espresso, and XCUITest frameworks for test automation."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Does RobusTest include hardware?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Yes, RobusTest provides a complete solution including hardware, software, and ongoing support. We set up and manage your in-house device lab so your team can focus on quality."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "How is RobusTest different from BrowserStack or Sauce Labs?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Unlike cloud testing services, RobusTest is 100% on-premise. Your data never leaves your network. There's no per-minute billing, unlimited users, air-gapped deployment support, and Smart TV testing capabilities that cloud services don't offer."
+					}
+				}
+			]
+		}
+		</script>
 	}
 }

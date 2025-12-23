@@ -1,9 +1,55 @@
 package layouts
 
 import (
+	"encoding/json"
 	"strconv"
 	"time"
 )
+
+// Helper functions for JSON-LD schema generation
+func webPageSchemaJSON(title, description, currentPath string) string {
+	schema := map[string]interface{}{
+		"@context":    "https://schema.org",
+		"@type":       "WebPage",
+		"name":        title + " | RobusTest",
+		"description": description,
+		"url":         "https://robustest.com" + currentPath,
+		"isPartOf": map[string]string{
+			"@type": "WebSite",
+			"name":  "RobusTest",
+			"url":   "https://robustest.com",
+		},
+		"publisher": map[string]string{
+			"@type": "Organization",
+			"name":  "RobusTest",
+		},
+	}
+	b, _ := json.Marshal(schema)
+	return string(b)
+}
+
+func breadcrumbSchemaJSON(title, currentPath string) string {
+	schema := map[string]interface{}{
+		"@context": "https://schema.org",
+		"@type":    "BreadcrumbList",
+		"itemListElement": []map[string]interface{}{
+			{
+				"@type":    "ListItem",
+				"position": 1,
+				"name":     "Home",
+				"item":     "https://robustest.com/",
+			},
+			{
+				"@type":    "ListItem",
+				"position": 2,
+				"name":     title,
+				"item":     "https://robustest.com" + currentPath,
+			},
+		},
+	}
+	b, _ := json.Marshal(schema)
+	return string(b)
+}
 
 templ Base(title string, description string, currentPath string) {
 	<!DOCTYPE html>
@@ -69,44 +115,12 @@ templ Base(title string, description string, currentPath string) {
 			</script>
 			<!-- JSON-LD Structured Data - WebPage -->
 			<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "WebPage",
-				"name": { templ.JSONString(title + " | RobusTest") },
-				"description": { templ.JSONString(description) },
-				"url": { templ.JSONString("https://robustest.com" + currentPath) },
-				"isPartOf": {
-					"@type": "WebSite",
-					"name": "RobusTest",
-					"url": "https://robustest.com"
-				},
-				"publisher": {
-					"@type": "Organization",
-					"name": "RobusTest"
-				}
-			}
+				@templ.Raw(webPageSchemaJSON(title, description, currentPath))
 			</script>
 			<!-- JSON-LD Structured Data - BreadcrumbList -->
 			if currentPath != "/" {
 				<script type="application/ld+json">
-				{
-					"@context": "https://schema.org",
-					"@type": "BreadcrumbList",
-					"itemListElement": [
-						{
-							"@type": "ListItem",
-							"position": 1,
-							"name": "Home",
-							"item": "https://robustest.com/"
-						},
-						{
-							"@type": "ListItem",
-							"position": 2,
-							"name": { templ.JSONString(title) },
-							"item": { templ.JSONString("https://robustest.com" + currentPath) }
-						}
-					]
-				}
+					@templ.Raw(breadcrumbSchemaJSON(title, currentPath))
 				</script>
 			}
 		</head>
@@ -131,7 +145,7 @@ templ Header(currentPath string) {
 			<div class="flex items-center justify-between h-16">
 				<!-- Logo -->
 				<a href="/" class="inline-flex items-center">
-					<img src="/assets/images/logo-full.avif" alt="RobusTest - Enterprise Mobile Device Lab" class="h-10 w-auto mt-1"/>
+					<img src="/assets/images/logo-full.avif" alt="RobusTest - Enterprise Mobile Device Lab" class="h-10 w-auto mt-1" width="160" height="40" loading="eager"/>
 				</a>
 				<!-- Desktop Navigation -->
 				<div class="hidden md:flex items-center space-x-8">
@@ -227,7 +241,7 @@ templ Footer() {
 				<!-- Brand Column - spans 2 columns -->
 				<div class="col-span-2">
 					<a href="/" class="inline-flex items-center gap-3 mb-4">
-						<img src="/assets/images/favicon.png" alt="" class="w-10 h-10"/>
+						<img src="/assets/images/favicon.png" alt="" class="w-10 h-10" width="40" height="40" loading="lazy"/>
 						<span class="text-2xl font-bold">
 							<span class="text-cyan-400">Robus</span><span class="text-white">Test</span>
 						</span>
