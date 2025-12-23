@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"crypto/tls"
 	"log"
 	"net/http"
 	"os"
@@ -130,6 +131,11 @@ func main() {
 		port = "3000"
 	}
 
+	// TLS configuration
+	tlsCert := os.Getenv("TLS_CERT")
+	tlsKey := os.Getenv("TLS_KEY")
+	tlsEnabled := tlsCert != "" && tlsKey != ""
+
 	// Configure the HTTP server with timeouts
 	srv := &http.Server{
 		Addr:         ":" + port,
@@ -139,11 +145,37 @@ func main() {
 		IdleTimeout:  120 * time.Second,
 	}
 
+	// Add TLS config if certificates are provided
+	if tlsEnabled {
+		srv.TLSConfig = &tls.Config{
+			MinVersion: tls.VersionTLS12,
+			CurvePreferences: []tls.CurveID{
+				tls.X25519,
+				tls.CurveP256,
+			},
+			CipherSuites: []uint16{
+				tls.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+				tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+				tls.TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,
+				tls.TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,
+				tls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+				tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+			},
+		}
+	}
+
 	// Start server in a goroutine
 	go func() {
-		log.Printf("Server starting on http://localhost:%s", port)
-		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			log.Fatalf("Server failed to start: %v", err)
+		if tlsEnabled {
+			log.Printf("Server starting on https://0.0.0.0:%s", port)
+			if err := srv.ListenAndServeTLS(tlsCert, tlsKey); err != nil && err != http.ErrServerClosed {
+				log.Fatalf("Server failed to start: %v", err)
+			}
+		} else {
+			log.Printf("Server starting on http://0.0.0.0:%s", port)
+			if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+				log.Fatalf("Server failed to start: %v", err)
+			}
 		}
 	}()
 

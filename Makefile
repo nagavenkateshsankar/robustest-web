@@ -3,7 +3,7 @@
 
 # Variables
 APP_NAME := robustest-web
-VERSION := $(shell date +"%Y%m%d-%H%M%S")
+VERSION := latest
 BUILD_TIME := $(shell date -u '+%Y-%m-%d_%H:%M:%S')
 LDFLAGS := -ldflags "-X main.Version=$(VERSION) -X main.BuildTime=$(BUILD_TIME) -s -w"
 
@@ -169,15 +169,16 @@ release: release-linux
 ## release-linux: Create Linux release tarball
 release-linux: build-linux
 	@echo "$(GREEN)Creating Linux release package...$(NC)"
+	@rm -rf $(DIST_DIR)/*
 	@mkdir -p $(DIST_DIR)
 	@cp $(APP_NAME)-linux $(APP_NAME)
-	tar -czvf $(DIST_DIR)/$(APP_NAME)-$(VERSION)-linux.tar.gz \
+	tar -czvf $(DIST_DIR)/$(APP_NAME)-linux.tar.gz \
 		$(APP_NAME) \
 		$(PUBLIC_DIR) \
 		.env \
 		README.md
 	@rm -f $(APP_NAME)
-	@echo "$(GREEN)Release package created: $(DIST_DIR)/$(APP_NAME)-$(VERSION)-linux.tar.gz$(NC)"
+	@echo "$(GREEN)Release package created: $(DIST_DIR)/$(APP_NAME)-linux.tar.gz$(NC)"
 
 ## release-mac-intel: Create macOS Intel release tarball
 release-mac-intel: build-mac-intel
