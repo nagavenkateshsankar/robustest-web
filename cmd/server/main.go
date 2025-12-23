@@ -12,6 +12,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/izinga/robustest-web/internal/app/handler"
+	"github.com/joho/godotenv"
 )
 
 // securityHeaders middleware adds security-related HTTP headers
@@ -44,6 +45,11 @@ func cacheControl() gin.HandlerFunc {
 }
 
 func main() {
+	// Load .env file if present
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found, using environment variables")
+	}
+
 	// Set Gin mode based on environment
 	if os.Getenv("GIN_MODE") == "" {
 		gin.SetMode(gin.ReleaseMode)
