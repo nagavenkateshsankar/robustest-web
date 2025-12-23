@@ -19,34 +19,9 @@ templ FeaturesPage() {
 		<section class="py-16 md:py-24 bg-white">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="space-y-24">
-					<!-- Manual Testing -->
-					<div class="grid md:grid-cols-2 gap-12 items-center">
-						<div>
-							<div class="flex items-center gap-4 mb-6">
-								<div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center">
-									<svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-									</svg>
-								</div>
-								<h2 class="text-3xl font-bold text-gray-900">Manual Testing</h2>
-							</div>
-							<p class="text-lg text-gray-600 mb-6 leading-relaxed">
-								Stream real device screens to your browser with ultra-low latency. Touch, swipe, type, and debug as if the device was in your hands.
-							</p>
-							<ul class="space-y-3">
-								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Real-time device streaming via VNC/WebRTC</span></li>
-								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Touch and gesture input</span></li>
-								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Screenshot and video recording</span></li>
-								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Device logs in real-time</span></li>
-							</ul>
-						</div>
-						<div class="rounded-2xl h-80 overflow-hidden shadow-lg">
-							<img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" alt="Developer using mobile device for manual testing on multiple screens" class="w-full h-full object-cover"/>
-						</div>
-					</div>
 					<!-- Test Automation -->
 					<div class="grid md:grid-cols-2 gap-12 items-center">
-						<div class="md:order-2">
+						<div>
 							<div class="flex items-center gap-4 mb-6">
 								<div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center">
 									<svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -66,8 +41,33 @@ templ FeaturesPage() {
 								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Parallel test execution</span></li>
 							</ul>
 						</div>
-						<div class="md:order-1 rounded-2xl h-80 overflow-hidden shadow-lg">
+						<div class="rounded-2xl h-80 overflow-hidden shadow-lg">
 							<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" alt="Automated testing infrastructure with code on laptop screen" class="w-full h-full object-cover"/>
+						</div>
+					</div>
+					<!-- Manual Testing -->
+					<div class="grid md:grid-cols-2 gap-12 items-center">
+						<div class="md:order-2">
+							<div class="flex items-center gap-4 mb-6">
+								<div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center">
+									<svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+									</svg>
+								</div>
+								<h2 class="text-3xl font-bold text-gray-900">Manual Testing</h2>
+							</div>
+							<p class="text-lg text-gray-600 mb-6 leading-relaxed">
+								Stream real device screens to your browser with ultra-low latency. Touch, swipe, type, and debug as if the device was in your hands.
+							</p>
+							<ul class="space-y-3">
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Real-time device streaming</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Touch and gesture input</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Screenshot capture</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Device logs in real-time</span></li>
+							</ul>
+						</div>
+						<div class="md:order-1 rounded-2xl h-80 overflow-hidden shadow-lg">
+							<img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" alt="Developer using mobile device for manual testing on multiple screens" class="w-full h-full object-cover"/>
 						</div>
 					</div>
 					<!-- Smart TV Testing -->
@@ -85,6 +85,7 @@ templ FeaturesPage() {
 								The only platform with comprehensive Smart TV support. Test streaming apps on the devices your users actually use.
 							</p>
 							<ul class="space-y-3">
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Android TV support</span></li>
 								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Roku device support</span></li>
 								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Apple TV support</span></li>
 								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Chromecast testing</span></li>
@@ -95,16 +96,91 @@ templ FeaturesPage() {
 							<img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&h=400&fit=crop" alt="Smart TV displaying streaming application interface" class="w-full h-full object-cover"/>
 						</div>
 					</div>
+					<!-- Device Management -->
+					<div class="grid md:grid-cols-2 gap-12 items-center">
+						<div class="md:order-2">
+							<div class="flex items-center gap-4 mb-6">
+								<div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center">
+									<svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+									</svg>
+								</div>
+								<h2 class="text-3xl font-bold text-gray-900">Device Management</h2>
+							</div>
+							<p class="text-lg text-gray-600 mb-6 leading-relaxed">
+								Manage your entire device fleet from a centralized dashboard. Track device health, schedule maintenance, and optimize utilization.
+							</p>
+							<ul class="space-y-3">
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Device inventory management</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Health monitoring & alerts</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Device scheduling & booking</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Utilization tracking</span></li>
+							</ul>
+						</div>
+						<div class="md:order-1 rounded-2xl h-80 overflow-hidden shadow-lg">
+							<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Dashboard showing device management interface" class="w-full h-full object-cover"/>
+						</div>
+					</div>
+					<!-- Reporting & Analytics -->
+					<div class="grid md:grid-cols-2 gap-12 items-center">
+						<div>
+							<div class="flex items-center gap-4 mb-6">
+								<div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center">
+									<svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+									</svg>
+								</div>
+								<h2 class="text-3xl font-bold text-gray-900">Reporting & Analytics</h2>
+							</div>
+							<p class="text-lg text-gray-600 mb-6 leading-relaxed">
+								Get insights into your testing activities with comprehensive reports and analytics dashboards.
+							</p>
+							<ul class="space-y-3">
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Test execution reports</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Trend analysis</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Exportable reports</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Custom dashboards</span></li>
+							</ul>
+						</div>
+						<div class="rounded-2xl h-80 overflow-hidden shadow-lg">
+							<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Analytics dashboard with charts and graphs" class="w-full h-full object-cover"/>
+						</div>
+					</div>
+					<!-- App Management -->
+					<div class="grid md:grid-cols-2 gap-12 items-center">
+						<div class="md:order-2">
+							<div class="flex items-center gap-4 mb-6">
+								<div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center">
+									<svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+									</svg>
+								</div>
+								<h2 class="text-3xl font-bold text-gray-900">App Management</h2>
+							</div>
+							<p class="text-lg text-gray-600 mb-6 leading-relaxed">
+								Upload, manage, and distribute app builds across your device fleet. Keep track of versions and streamline your testing workflow.
+							</p>
+							<ul class="space-y-3">
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">App upload & storage</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Version management</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">One-click install to devices</span></li>
+								<li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-gray-700">Build retention</span></li>
+							</ul>
+						</div>
+						<div class="md:order-1 rounded-2xl h-80 overflow-hidden shadow-lg">
+							<img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop" alt="Mobile app development and management" class="w-full h-full object-cover"/>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
-		<!-- Integration Triggers -->
+		<!-- Integrations -->
 		<section id="integrations" class="py-16 md:py-24 bg-gray-50">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-16">
-					<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Integration Triggers</h2>
+					<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Integrations</h2>
 					<p class="text-xl text-gray-600 max-w-2xl mx-auto">
-						Works with the tools your team already uses.
+						Works seamlessly with the tools you already use.
 					</p>
 				</div>
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
